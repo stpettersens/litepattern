@@ -18,6 +18,6 @@ impl LPattern {
     }
 
     pub fn apply_to(&self, text: &str) {
-
+        println!("Appying to pattern: {:?}", self.groups);
     }
 }
