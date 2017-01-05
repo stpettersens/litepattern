@@ -1,7 +1,7 @@
 pub struct LPattern;
 
 impl LPattern {
-    pub fn new(pattern: String) {
+    pub fn new(pattern: &str) {
         println!("{}", pattern);
     }
 }
