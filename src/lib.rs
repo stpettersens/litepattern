@@ -17,10 +17,16 @@ impl LPattern {
         }
     }
 
-    pub fn apply_to(&self, text: &str) {
-        println!("Appying to pattern: {:?}", self.groups);
+    pub fn apply_to(&self, text: &str) -> Vec<String> {
+        println!("Applying to pattern: {:?}", self.groups);
+        let mut captures: Vec<String> = Vec::new();
         for g in &self.groups {
-            println!("{:?}", g.len());
+            let mut substring: Vec<String> = Vec::new();
+            for i in 0..g.len() - 1 {
+                substring.push(text[i]);
+            }
+            captures.push(substring)
         }
+        captures
     }
 }
