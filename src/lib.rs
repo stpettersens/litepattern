@@ -2,13 +2,9 @@ pub struct LPattern;
 
 impl LPattern {
     pub fn new(pattern: &str) {
-        println!("{}", pattern);
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
+        let mut split = pattern.split(")");
+        for s in split {
+            println!("{}", s);
+        }
     }
 }
