@@ -25,7 +25,7 @@ impl LPattern {
             for i in 0..g.len() - 1 {
                 substring.push(text[i]);
             }
-            captures.push(substring)
+            captures.push(substring.join(""))
         }
         captures
     }
