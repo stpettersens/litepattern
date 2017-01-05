@@ -23,7 +23,7 @@ impl LPattern {
         for g in &self.groups {
             let mut substring: Vec<String> = Vec::new();
             for i in 0..g.len() - 1 {
-                substring.push(text[i]);
+                substring.push(text.chars()[i]);
             }
             captures.push(substring.join(""))
         }
