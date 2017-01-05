@@ -27,7 +27,7 @@ impl LPattern {
         let mut x = 0;
         for g in &self.groups {
             let mut substring: Vec<String> = Vec::new();
-            for i in 0..g.len() {
+            for i in 0..g.len() - 1 {
                 x = x + i;
                 substring.push(format!("{}", chars[x]));
             }
