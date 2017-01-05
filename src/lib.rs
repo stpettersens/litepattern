@@ -26,7 +26,6 @@ impl LPattern {
         for g in &self.groups {
             let mut substring: Vec<String> = Vec::new();
             for _ in 0..g.len() {
-                println!("Index is {}", i);
                 substring.push(format!("{}", text.chars().nth(i).unwrap()));
                 i += 1;
             }
