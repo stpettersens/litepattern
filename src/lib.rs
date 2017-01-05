@@ -1,4 +1,5 @@
 pub struct LPattern {
+    pattern: String,
     groups: Vec<String>,
 }
 
@@ -13,7 +14,7 @@ impl LPattern {
         }
         println!("{:?}", groups);
         LPattern {
-            pattern: pattern,
+            pattern: pattern.to_owned(),
             groups: groups,
         }
     }
