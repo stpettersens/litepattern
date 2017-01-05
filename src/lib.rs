@@ -13,25 +13,24 @@ impl LPattern {
         }
         println!("{:?}", groups);
         LPattern {
+            pattern: pattern,
             groups: groups,
         }
     }
-
+    
     pub fn apply_to(&self, text: &str) -> Vec<String> {
-        println!("Applying to pattern: {:?}", self.groups);
-        let mut chars: Vec<char> = Vec::new();
-        for c in text.chars() {
-            chars.push(c);
-        }
+        let mut i = 0;
         let mut captures: Vec<String> = Vec::new();
-        let mut x = 0;
+        let mut fcaptures: Vec<String> = Vec::new();
         for g in &self.groups {
+            println!("Group is {:?}", g);
             let mut substring: Vec<String> = Vec::new();
-            for i in 0..g.len() - 1 {
-                x = x + i;
-                substring.push(format!("{}", chars[x]));
+            for _ in 0..g.len() {
+                println!("Index is {}", i);
+                substring.push(format!("{}", text.chars().nth(i).unwrap()));
+                i += 1;
             }
-            captures.push(substring.join(""))
+            println!("{}", substring.join(""));
         }
         captures
     }
