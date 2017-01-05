@@ -1,0 +1,5 @@
+[package]
+name = "litepattern"
+version = "0.1.0"
+description = "Light pattern matching library for Rust"
+authors = ["Sam Saint-Pettersen <s.stpettersen+github@gmail.com>"]
