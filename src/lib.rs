@@ -24,10 +24,12 @@ impl LPattern {
             chars.push(c);
         }
         let mut captures: Vec<String> = Vec::new();
+        let mut x = 0;
         for g in &self.groups {
             let mut substring: Vec<String> = Vec::new();
-            for i in 0..g.len() - 1 {
-                substring.push(format!("{}", chars[i]));
+            for i in 0..g.len() {
+                x = x + i;
+                substring.push(format!("{}", chars[x]));
             }
             captures.push(substring.join(""))
         }
