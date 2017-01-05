@@ -12,7 +12,6 @@ impl LPattern {
                 groups.push(s.to_owned())
             }
         }
-        println!("{:?}", groups);
         LPattern {
             pattern: pattern.to_owned(),
             groups: groups,
