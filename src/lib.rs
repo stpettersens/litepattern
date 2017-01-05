@@ -1,6 +1,6 @@
 pub struct LPattern {
-    groups: Vec<&str>
-};
+    groups: Vec<&str>,
+}
 
 impl LPattern {
     pub fn new(pattern: &str) -> LPattern {
