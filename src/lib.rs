@@ -17,7 +17,7 @@ impl LPattern {
         }
     }
 
-    pub fn apply_to(&self, text: &str) -> Vec<String> {
+    pub fn apply_to(&self, text: &str) {
         println!("Appying to pattern: {:?}", self.groups);
         for g in &self.groups {
             print!("{:?}", g.len());
