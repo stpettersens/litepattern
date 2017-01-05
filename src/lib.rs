@@ -7,7 +7,7 @@ impl LPattern {
         let mut split = pattern.split("%");
         let mut groups: Vec<String> = Vec::new();
         for s in split {
-            if s.to_owned().len > 0 {
+            if s.to_owned().len() > 0 {
                 groups.push(s.to_owned())
             }
         }
