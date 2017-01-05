@@ -1,11 +1,11 @@
 pub struct LPattern {
-    groups: Vec<&str>,
+    groups: Vec<String>,
 }
 
 impl LPattern {
     pub fn new(pattern: &str) -> LPattern {
         let mut split = pattern.split("%");
-        let groups: Vec<&str> = split.collect();
+        let groups: Vec<String> = split.collect();
         println!("{:?}", groups);
         LPattern {
             groups: groups,
