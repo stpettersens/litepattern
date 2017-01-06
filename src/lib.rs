@@ -1,5 +1,4 @@
 pub struct LPattern {
-    pattern: String,
     groups: Vec<String>,
 }
 
@@ -13,7 +12,6 @@ impl LPattern {
             }
         }
         LPattern {
-            pattern: pattern.to_owned(),
             groups: groups,
         }
     }
@@ -21,7 +19,6 @@ impl LPattern {
     pub fn apply_to(&self, text: &str) -> Vec<String> {
         let mut i = 0;
         let mut captures: Vec<String> = Vec::new();
-        let mut fcaptures: Vec<String> = Vec::new();
         for g in &self.groups {
             let mut substring: Vec<String> = Vec::new();
             for _ in 0..g.len() {
@@ -31,5 +28,21 @@ impl LPattern {
             captures.push(substring.join(""));
         }
         captures
+    }
+    
+    pub fn is_match(captures: Vec<String>, text: &str) -> bool {
+        let mut matched = true;
+        let capturesj = captures.join("");
+        if text.len() == capturesj.len() {
+            for (i, c) in text.chars().enumerate() {
+                if c != capturesj.chars().nth(i).unwrap() {
+                    matched = false;
+                    break;
+                }
+            }
+        } else {
+            matched = false;
+        }
+        matched
     }
 }
