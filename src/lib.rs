@@ -1,4 +1,5 @@
 pub struct LPattern {
+    length: usize,
     groups: Vec<String>,
 }
 
@@ -12,6 +13,7 @@ impl LPattern {
             }
         }
         LPattern {
+            length: groups.join("").len(),
             groups: groups,
         }
     }
@@ -22,7 +24,9 @@ impl LPattern {
         for g in &self.groups {
             let mut substring: Vec<String> = Vec::new();
             for _ in 0..g.len() {
-                substring.push(format!("{}", text.chars().nth(i).unwrap()));
+                if i < text.len() {
+                    substring.push(format!("{}", text.chars().nth(i).unwrap()));
+                }
                 i += 1;
             }
             captures.push(substring.join(""));
@@ -30,18 +34,17 @@ impl LPattern {
         captures
     }
     
-    pub fn is_match(captures: Vec<String>, text: &str) -> bool {
-        let mut matched = true;
+    pub fn is_match(&self, captures: Vec<String>, text: &str) -> bool {
+        let mut matched = false;
         let capturesj = captures.join("");
-        if text.len() == capturesj.len() {
+        if text.len() == self.length {
+            matched = true;
             for (i, c) in text.chars().enumerate() {
                 if c != capturesj.chars().nth(i).unwrap() {
                     matched = false;
                     break;
                 }
             }
-        } else {
-            matched = false;
         }
         matched
     }
