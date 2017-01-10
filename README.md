@@ -11,7 +11,7 @@ litepattern = "0.1.0"
 # or: litepattern = { git = "https://github.com/stpettersens/litepattern.git" }
 ```
 
-You can use `litepattern` as a lighter alternative to the [regex](https://github.com/rust-lang/regex) crate, if you only need to do simple pattern matching. For example, say you want to pass a simple timestamp such as `2017-01-10T19:10:00` and break it down into is constituent parts:
+You can use `litepattern` as a lighter alternative to the [regex](https://github.com/rust-lang/regex) crate if you only need to do simple pattern matching. For example, say you want to pass a simple timestamp such as `2017-01-10T19:10:00` and break it down into its constituent parts:
 
 ```rust
 extern crate litepattern;
