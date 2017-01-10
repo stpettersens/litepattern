@@ -22,16 +22,16 @@ fn main() {
   let p = LPattern::new("%dddd-%dd-%ddT%dd-%dd-%dd"); // => LPattern.
   
   // Apply the pattern against ("to") some input text and return any matches (captures) as a vector of Strings.
-  let caps = p.apply_to("2017-01-10T19:10:00"); // => ["2017-", "01-", "10-", "T19:", "10:", "00"]
-  
+  let caps = p.apply_to("2017-01-10T19:10:00"); // => ["2017-", "01-", "10T", "19:", "10:", "00"]
+
   // Get the year.
-  println!("{}", caps[0][0..4]); // First item in vector; slice of four characters from index zero => 2017
+  println!("{}", &caps[0][0..4]); // First item in vector; slice of four characters from index zero => 2017
   
   // Get the month.
-  println!("{}", caps[1][0..2]); // Second item in vector; slice of two characters from index zero => 01
+  println!("{}", &caps[1][0..2]); // Second item in vector; slice of two characters from index zero => 01
   
   // Get the day.
-  println!("{}", capts[2][0..2]); // Third item in vector; slice of two characters from index zero => 10
+  println!("{}", &caps[2][0..2]); // Third item in vector; slice of two characters from index zero => 10
 }
 ```
 
