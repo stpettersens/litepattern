@@ -1,6 +1,6 @@
 /*
     litepattern.
-    Light pattern matching library for Rust.
+    Lightweight pattern matching library for Rust.
 
     Copyright (c) 2017 Sam Saint-Pettersen.
 
