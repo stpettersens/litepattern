@@ -3,6 +3,7 @@
 
 [![Build Status](https://travis-ci.org/stpettersens/litepattern.png?branch=master)](https://travis-ci.org/stpettersens/litepattern)
 [![Build status](https://ci.appveyor.com/api/projects/status/e4prcyy8q1grrdgn?svg=true)](https://ci.appveyor.com/project/stpettersens/litepattern)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/stpettersens/litepattern/blob/master/LICENSE)
 [![Crates.io](https://img.shields.io/crates/v/litepattern.svg)](https://crates.io/crates/litepattern)
 
 ```toml
